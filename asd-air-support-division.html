@@ -3,44 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSPD · Comisaría Policial Principal — Plano Interactivo</title>
+<title>ASD · Air Support Division — Plano Interactivo</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root{
   --bg:#0A0F16;
-  --bg-blueprint:#0C1B2E;
-  --panel:#101A28;
-  --panel2:#0D1622;
-  --line:#1E3049;
-  --line-soft:#16283e;
-  --text:#E7EDF5;
-  --text-dim:#8FA1B8;
-  --text-faint:#5C7089;
-  --publico:#3FA66B;
-  --policial:#2E7FD9;
-  --restringido:#E0A526;
-  --maxima:#D6444A;
-  --publico-fill: rgba(63,166,107,0.14);
-  --policial-fill: rgba(46,127,217,0.14);
-  --restringido-fill: rgba(224,165,38,0.14);
-  --maxima-fill: rgba(214,68,74,0.16);
-  --steel:#8b98a8;
+  --bg-blueprint:#0B1A22;
+  --panel:#101B22;
+  --panel2:#0D1619;
+  --line:#1E3B3F;
+  --line-soft:#152a2d;
+  --text:#E7F1F0;
+  --text-dim:#8FB3AE;
+  --text-faint:#5C7C78;
+  --publico:#2E7FD9;
+  --asd:#3FA66B;
+  --restringido:#E07B22;
+  --critico:#D6444A;
+  --publico-fill: rgba(46,127,217,0.14);
+  --asd-fill: rgba(63,166,107,0.14);
+  --restringido-fill: rgba(224,123,34,0.15);
+  --critico-fill: rgba(214,68,74,0.16);
+  --steel:#8ba8a1;
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;}
 body{
   min-height:100vh;
   background:
-    radial-gradient(circle at 15% 0%, rgba(46,127,217,0.08), transparent 45%),
-    radial-gradient(circle at 90% 90%, rgba(214,68,74,0.06), transparent 40%),
+    radial-gradient(circle at 15% 0%, rgba(63,166,107,0.08), transparent 45%),
+    radial-gradient(circle at 90% 90%, rgba(46,127,217,0.07), transparent 40%),
     var(--bg);
 }
 
 /* ---------- HEADER ---------- */
 header{
   position:sticky; top:0; z-index:40;
-  background:linear-gradient(180deg, #0B131F 0%, #0B131Fee 90%, transparent);
+  background:linear-gradient(180deg, #0B1517 0%, #0B1517ee 90%, transparent);
   border-bottom:1px solid var(--line);
   padding:14px 22px 10px;
   backdrop-filter:blur(6px);
@@ -49,11 +49,11 @@ header{
 .brand{display:flex; align-items:center; gap:12px;}
 .brand .badge{
   width:42px;height:42px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%, #35507a, #0D1622 70%);
-  border:1.5px solid var(--policial);
+  background:radial-gradient(circle at 35% 30%, #2f5a44, #0D1622 70%);
+  border:1.5px solid var(--asd);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Oswald'; font-weight:700; font-size:15px; color:var(--policial);
-  box-shadow:0 0 14px rgba(46,127,217,0.35);
+  font-family:'Oswald'; font-weight:700; font-size:14px; color:var(--asd);
+  box-shadow:0 0 14px rgba(63,166,107,0.35);
   flex-shrink:0;
 }
 .brand h1{
@@ -62,6 +62,7 @@ header{
 }
 .brand p{margin:0; font-size:11.5px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace; letter-spacing:0.5px;}
 
+.header-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
 .cred-box{
   display:flex; align-items:center; gap:10px;
   background:var(--panel2); border:1px solid var(--line); border-radius:10px;
@@ -69,7 +70,7 @@ header{
 }
 .cred-card{
   width:52px; height:34px; border-radius:5px;
-  background:linear-gradient(135deg, var(--card-a,#2E7FD9), var(--card-b,#173352));
+  background:linear-gradient(135deg, var(--card-a,#3FA66B), var(--card-b,#173352));
   position:relative; flex-shrink:0;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15), 0 2px 6px rgba(0,0,0,0.4);
 }
@@ -82,10 +83,9 @@ header{
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.3px;
   outline:none; cursor:pointer;
 }
-.cred-select option{background:#101A28; color:var(--text);}
+.cred-select option{background:#101B22; color:var(--text);}
 .cred-label{font-size:9.5px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); display:block; margin-bottom:2px;}
 
-.header-actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
 .loc-switch{
   display:flex; align-items:center; gap:8px;
   background:var(--panel2); border:1px solid var(--line); border-radius:10px;
@@ -102,9 +102,9 @@ header{
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.3px;
   outline:none; cursor:pointer; max-width:210px;
 }
-.loc-select option{background:#101A28; color:var(--text);}
+.loc-select option{background:#101B22; color:var(--text);}
 
-/* ---------- FLOOR TABS (panel de ascensor) ---------- */
+/* ---------- SECTOR TABS ---------- */
 .floor-panel{
   display:flex; gap:6px; margin-top:12px; overflow-x:auto; padding-bottom:2px;
 }
@@ -116,8 +116,8 @@ header{
 }
 .floor-btn:hover{color:var(--text); border-color:var(--steel);}
 .floor-btn.active{
-  color:#0A0F16; background:var(--policial); border-color:var(--policial);
-  box-shadow:0 0 12px rgba(46,127,217,0.5);
+  color:#0A0F16; background:var(--asd); border-color:var(--asd);
+  box-shadow:0 0 12px rgba(63,166,107,0.5);
 }
 
 /* ---------- MAIN LAYOUT ---------- */
@@ -151,7 +151,6 @@ svg.floor-svg{width:100%; height:auto; display:block;}
   font-family:'IBM Plex Mono'; fill:var(--text-faint); pointer-events:none;
 }
 .corridor-label{font-family:'IBM Plex Mono'; fill:var(--text-faint); letter-spacing:2px;}
-.hatch-max{ }
 
 /* ---------- SIDEBAR ---------- */
 .sidebar{display:flex; flex-direction:column; gap:14px;}
@@ -167,7 +166,7 @@ svg.floor-svg{width:100%; height:auto; display:block;}
 .arrow-swatch::after{content:'▶'; position:absolute; right:-8px; top:-6px; font-size:9px;}
 
 .plaque{
-  border-left:3px solid var(--policial);
+  border-left:3px solid var(--asd);
   background:var(--panel2); border-radius:8px; padding:14px;
 }
 .plaque .lvl-chip{
@@ -176,7 +175,7 @@ svg.floor-svg{width:100%; height:auto; display:block;}
   color:#0A0F16; font-weight:600;
 }
 .plaque h4{font-family:'Oswald'; font-size:16px; margin:0 0 8px; text-transform:uppercase; letter-spacing:0.4px;}
-.plaque p{font-size:13px; line-height:1.55; color:#C9D4E2; margin:0;}
+.plaque p{font-size:13px; line-height:1.55; color:#C9E2DC; margin:0;}
 .plaque .empty{color:var(--text-faint); font-size:13px; font-style:italic;}
 
 /* ---------- MODAL: LECTOR DE ACCESO ---------- */
@@ -185,7 +184,7 @@ svg.floor-svg{width:100%; height:auto; display:block;}
   display:flex; align-items:center; justify-content:center; z-index:100; padding:20px;
 }
 .reader{
-  width:100%; max-width:380px; background:linear-gradient(180deg,#141F30,#0D1522);
+  width:100%; max-width:380px; background:linear-gradient(180deg,#14201F,#0D1719);
   border:1px solid var(--line); border-radius:16px; padding:26px 24px; text-align:center;
   box-shadow:0 20px 60px rgba(0,0,0,0.55);
 }
@@ -196,17 +195,17 @@ svg.floor-svg{width:100%; height:auto; display:block;}
 }
 .led{
   width:16px; height:16px; border-radius:50%; margin:0 auto 14px;
-  background:var(--maxima); box-shadow:0 0 16px var(--maxima);
+  background:var(--critico); box-shadow:0 0 16px var(--critico);
   transition:all .25s ease;
 }
-.led.ok{background:var(--publico); box-shadow:0 0 18px var(--publico);}
+.led.ok{background:var(--asd); box-shadow:0 0 18px var(--asd);}
 .reader h2{font-family:'Oswald'; text-transform:uppercase; font-size:16px; letter-spacing:0.5px; margin:0 0 6px;}
 .reader .room-name{font-size:13.5px; color:var(--text-dim); margin:0 0 18px; font-family:'IBM Plex Mono';}
 .req-row{display:flex; justify-content:space-between; align-items:center; font-size:12px; margin-bottom:8px; color:var(--text-dim);}
 .req-row .lvl-chip{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.5px; padding:3px 9px; border-radius:20px; color:#0A0F16; font-weight:600;}
 .reader-msg{font-size:13px; margin:16px 0; min-height:18px; font-weight:600;}
-.reader-msg.deny{color:var(--maxima);}
-.reader-msg.grant{color:var(--publico);}
+.reader-msg.deny{color:var(--critico);}
+.reader-msg.grant{color:var(--asd);}
 .reader select{
   width:100%; background:var(--panel2); border:1px solid var(--line); color:var(--text);
   padding:9px 10px; border-radius:8px; font-family:'IBM Plex Mono'; font-size:12.5px; margin-bottom:12px;
@@ -216,7 +215,7 @@ button.primary, button.ghost{
   flex:1; padding:11px; border-radius:9px; font-family:'Oswald'; font-weight:600;
   letter-spacing:0.4px; text-transform:uppercase; font-size:12.5px; cursor:pointer; border:none;
 }
-button.primary{background:var(--policial); color:#0A0F16;}
+button.primary{background:var(--asd); color:#0A0F16;}
 button.primary:hover{filter:brightness(1.1);}
 button.ghost{background:transparent; border:1px solid var(--line); color:var(--text-dim);}
 button.ghost:hover{color:var(--text); border-color:var(--steel);}
@@ -232,10 +231,10 @@ footer{
 <header>
   <div class="header-row">
     <div class="brand">
-      <div class="badge">LSPD</div>
+      <div class="badge">ASD</div>
       <div>
-        <h1>Comisaría Policial Principal</h1>
-        <p>PLANO INTERACTIVO · LOS SANTOS PD — SEDE CENTRAL</p>
+        <h1>Air Support Division</h1>
+        <p>PLANO INTERACTIVO · BASE AÉREA POLICIAL</p>
       </div>
     </div>
     <div class="header-actions">
@@ -267,164 +266,137 @@ footer{
 
   <aside class="sidebar">
     <div class="card">
-      <h3>Leyenda — Flujos</h3>
-      <div class="legend-row"><span class="arrow-swatch" style="background:var(--publico)"></span> Flujo civil</div>
-      <div class="legend-row"><span class="arrow-swatch" style="background:var(--policial)"></span> Flujo policial</div>
-      <div class="legend-row"><span class="arrow-swatch" style="background:var(--maxima)"></span> Flujo detenidos</div>
+      <h3>Leyenda — Circulación</h3>
+      <div class="legend-row"><span class="arrow-swatch" style="background:var(--publico)"></span> Circulación peatonal</div>
+      <div class="legend-row"><span class="arrow-swatch" style="background:var(--asd)"></span> Circulación terrestre</div>
+      <div class="legend-row"><span class="arrow-swatch" style="background:var(--restringido)"></span> Circulación aeronáutica</div>
     </div>
     <div class="card">
       <h3>Niveles de acceso</h3>
-      <div class="legend-row"><span class="dot" style="background:var(--publico)"></span> Público</div>
-      <div class="legend-row"><span class="dot" style="background:var(--policial)"></span> Policial</div>
+      <div class="legend-row"><span class="dot" style="background:var(--publico)"></span> Acceso público</div>
+      <div class="legend-row"><span class="dot" style="background:var(--asd)"></span> Acceso ASD</div>
       <div class="legend-row"><span class="dot" style="background:var(--restringido)"></span> Restringido</div>
-      <div class="legend-row"><span class="dot" style="background:var(--maxima)"></span> Máxima seguridad</div>
+      <div class="legend-row"><span class="dot" style="background:var(--critico)"></span> Crítico</div>
     </div>
     <div class="card" id="infoCard">
       <h3>Sala seleccionada</h3>
-      <div class="plaque"><p class="empty">Pulsa una sala del plano para leer su cartel informativo.</p></div>
+      <div class="plaque"><p class="empty">Pulsa una zona del plano para leer su cartel informativo.</p></div>
     </div>
   </aside>
 </main>
 
-<footer>VISIÓN GENERAL — FUNCIONAL · SEGURA · REALISTA &nbsp;·&nbsp; USO EXCLUSIVO PARA ROLEPLAY</footer>
+<footer>BASE AÉREA 24/7 — MANDO · PILOTOS · MANTENIMIENTO · OPERACIONES &nbsp;·&nbsp; USO EXCLUSIVO PARA ROLEPLAY</footer>
 
 <div id="modalHost"></div>
 
 <script>
 /* ============ NIVELES Y CREDENCIALES ============ */
 const LEVELS = {
-  publico:     {name:'Público',           color:'var(--publico)',     hex:'#3FA66B'},
-  policial:    {name:'Policial',          color:'var(--policial)',    hex:'#2E7FD9'},
-  restringido: {name:'Restringido',       color:'var(--restringido)', hex:'#E0A526'},
-  maxima:      {name:'Máxima seguridad',  color:'var(--maxima)',      hex:'#D6444A'},
+  publico:     {name:'Público',       color:'var(--publico)',     hex:'#2E7FD9'},
+  asd:         {name:'Acceso ASD',    color:'var(--asd)',         hex:'#3FA66B'},
+  restringido: {name:'Restringido',   color:'var(--restringido)', hex:'#E07B22'},
+  critico:     {name:'Crítico',       color:'var(--critico)',     hex:'#D6444A'},
 };
-const LEVEL_ORDER = ['publico','policial','restringido','maxima'];
 
 const CREDENTIALS = [
-  {id:'civil',   name:'Visitante / Civil',        allow:['publico'],                                   cardA:'#3FA66B', cardB:'#173e2a'},
-  {id:'agente',  name:'Agente de Policía',         allow:['publico','policial'],                        cardA:'#2E7FD9', cardB:'#173352'},
-  {id:'inv',     name:'Investigador / Mando medio',allow:['publico','policial','restringido'],          cardA:'#E0A526', cardB:'#4a3712'},
-  {id:'jefatura',name:'Jefatura — Acceso total',   allow:['publico','policial','restringido','maxima'], cardA:'#D6444A', cardB:'#4a1518'},
+  {id:'visitante', name:'Visitante',                    allow:['publico'],                                cardA:'#2E7FD9', cardB:'#132a44'},
+  {id:'personal',  name:'Personal ASD',                  allow:['publico','asd'],                          cardA:'#3FA66B', cardB:'#173e2a'},
+  {id:'tecnico',   name:'Técnico / Supervisor de vuelo',  allow:['publico','asd','restringido'],            cardA:'#E07B22', cardB:'#4a2f12'},
+  {id:'jefatura',  name:'Jefatura ASD — Acceso total',    allow:['publico','asd','restringido','critico'],  cardA:'#D6444A', cardB:'#4a1518'},
 ];
 let currentCred = CREDENTIALS[0];
 
-/* ============ DATOS DE PLANTAS ============ */
-// Cada sala: {name, level, desc, flex}
+/* ============ DATOS DE SECTORES ============ */
 const FLOORS = [
 {
-  id:'exterior', code:'EXT', name:'Exterior',
-  sub:'Accesos, garaje policial exterior y aparcamiento civil',
+  id:'acceso', code:'F', name:'Sector F — Acceso',
+  sub:'Entrada, garita, barrera y aparcamientos — Perímetro de seguridad',
   rows:[
-    [ {name:'Entrada Principal Civil', level:'publico', desc:'Acceso peatonal principal desde la calle. Puertas de cristal, escalinata accesible y marquesina cubierta. Lleva directamente a Recepción, en planta baja.'},
-      {name:'Aparcamiento Civil y Visitas', level:'publico', desc:'Zona de aparcamiento para ciudadanos y visitantes, separada físicamente del garaje policial. Vigilada por cámaras exteriores.'} ],
-    [ {name:'Garita de Seguridad', level:'policial', desc:'Puesto de control previo a la barrera del garaje policial. El agente de guardia verifica la placa/identificación del conductor antes de autorizar el paso.'},
-      {name:'Barrera Automática', level:'policial', desc:'Barrera vehicular que no se abre de forma automática: requiere validación manual desde la garita tras comprobar la identificación del vehículo y el agente.'},
-      {name:'Carril de Acceso Vehicular', level:'policial', desc:'Carriles independientes de entrada y salida con zona de espera para vehículos policiales antes del control de la garita.'} ],
-    [ {name:'Garaje Policial — Coches', level:'policial', flex:2, desc:'Aparcamiento cubierto para vehículos patrulla. Totalmente separado del garaje de procesados de detenidos, situado en planta -1.'},
-      {name:'Garaje Policial — Motos', level:'policial', desc:'Plazas reservadas para motocicletas de la unidad de tráfico y patrulla urbana.'},
-      {name:'Plazas Reservadas — Mandos', level:'restringido', desc:'Plazas de aparcamiento asignadas a comandantes y jefatura, próximas a la entrada policial directa.'} ],
-    [ {name:'Entrada Policial', level:'policial', desc:'Acceso exclusivo de agentes mediante lector de tarjeta/placa. Conecta directamente con vestuarios y la zona operativa de planta baja.'} ],
+    [ {name:'Entrada ASD (calle)', level:'publico', desc:'Acceso vehicular y peatonal principal desde la vía pública, señalizado con el cartel "Air Support Division" y el escudo policial.'},
+      {name:'Garita de Seguridad', level:'asd', desc:'Puesto de control donde el agente de guardia verifica la identificación antes de autorizar el paso a la barrera.'},
+      {name:'Barrera Automática', level:'asd', desc:'Barrera de acceso vehicular que separa la calle del complejo ASD. No se abre sin validación previa desde la garita.'} ],
+    [ {name:'Parking Personal', level:'asd', desc:'Aparcamiento para el personal de ASD, dentro del perímetro de seguridad.'},
+      {name:'Parking Visitantes', level:'publico', desc:'Aparcamiento exterior para visitantes, separado de las zonas restringidas de la base.'},
+      {name:'Parking Operativo', level:'restringido', desc:'Plazas reservadas para vehículos preparados para salir de inmediato en caso de operativo.'} ],
   ],
-  flows:[{type:'civil', d:'M 60 60 L 60 150'}, {type:'policial', d:'M 780 60 L 780 470'}]
+  flows:[{type:'civil', d:'M 40 40 L 40 160'}, {type:'policial', d:'M 700 40 L 700 160'}]
 },
 {
-  id:'p-1', code:'-1', name:'Planta -1',
-  sub:'Seguridad, detenidos y entrenamiento — Nivel máxima seguridad',
+  id:'principal', code:'A', name:'Sector A — Edificio Principal',
+  sub:'Centro administrativo y operativo de ASD',
   rows:[
-    [ {name:'Garaje de Procesados', level:'maxima', flex:2, desc:'Garaje exclusivo para vehículos que trasladan detenidos. Conecta directamente con Procesamiento sin pasar por zonas públicas ni por el garaje policial normal.'},
-      {name:'Puerta de Seguridad', level:'maxima', desc:'Puerta blindada de un único sentido entre el garaje de procesados y la zona de booking. Controlada desde la sala de control de calabozos.'},
-      {name:'Procesamiento / Booking', level:'maxima', flex:2, desc:'Mostrador de registro de detenidos: fotografía, huellas, inventario de pertenencias y taquillas. Varios puestos permiten procesar detenidos en paralelo.'} ],
-    [ {name:'Sala Omega', level:'restringido', desc:'Sala polivalente para reuniones tácticas breves y coordinación previa a operativos de alto riesgo.'},
-      {name:'Interrogatorios', level:'maxima', flex:2, desc:'Dos salas de interrogatorio independientes con mesa, cámara, micrófono y cristal de observación, conectadas a una sala de control central.'},
-      {name:'Calabozos', level:'maxima', flex:2, desc:'Pasillo de celdas individuales y dobles, más una celda de seguridad reforzada. Vigilancia permanente mediante cámaras e intercomunicadores.'} ],
-    [ {name:'Campo de Tiro', level:'restringido', flex:2, desc:'Galería de tiro completamente insonorizada, separada del área de detenidos. Varios puestos individuales tras cristal de seguridad.'},
-      {name:'Sala de Instructores', level:'restringido', desc:'Oficina de preparación y control para los instructores del campo de tiro.'},
-      {name:'Almacén', level:'restringido', desc:'Almacén de munición de entrenamiento y material del campo de tiro.'},
-      {name:'Enfermería de Detenidos', level:'maxima', desc:'Sala médica junto a procesamiento con camilla y material básico para revisión rápida de detenidos.'} ],
-    [ {name:'Zona de Espera Detenidos', level:'maxima', desc:'Área de espera vigilada previa al acceso a calabozos, evitando cruces innecesarios de circulación.'},
-      {name:'Sala de Abogados A', level:'maxima', desc:'Sala de visita legal. El detenido accede directamente desde calabozos y regresa sin pisar el resto del edificio.'},
-      {name:'Sala de Abogados B', level:'maxima', desc:'Segunda sala de visita legal, idéntica en funcionamiento a la Sala A.'},
-      {name:'Control de Calabozos', level:'maxima', desc:'Puesto de control central que gestiona puertas de seguridad y cámaras de todo el módulo de detenidos.'} ],
+    [ {name:'Recepción ASD', level:'publico', desc:'Vestíbulo de entrada con control de acceso, pantalla de estado de vuelos y separación clara entre visitantes y personal autorizado.'},
+      {name:'Despacho Jefe de ASD', level:'critico', desc:'Despacho principal de la división, con zona de reuniones y grandes ventanales orientados hacia la pista y los hangares.'},
+      {name:'Despacho Subjefe de ASD', level:'critico', desc:'Despacho contiguo al del Jefe, con vista directa a la zona operativa.'} ],
+    [ {name:'Sala de Operaciones', level:'restringido', flex:2, desc:'Centro de mando de ASD: pantallas de seguimiento de aeronaves, estado de la flota, meteorología y operaciones activas.'},
+      {name:'Centro de Comunicaciones', level:'restringido', desc:'Sala de radios aeronáuticas y policiales conectada directamente con Operaciones.'},
+      {name:'Sala de Reuniones de Mando', level:'critico', desc:'Sala exclusiva para jefatura, supervisores y pilotos de mando, con mapa aéreo y sistema audiovisual.'} ],
+    [ {name:'Briefing de Vuelo', level:'asd', desc:'Sala de preparación de misiones: persecuciones aéreas, búsquedas, vigilancia y operaciones especiales.'},
+      {name:'Planificación de Vuelo', level:'asd', desc:'Sala más pequeña para definir rutas, tripulación, aeronave asignada y condiciones meteorológicas.'},
+      {name:'Sala Común de Pilotos', level:'asd', desc:'Puestos informáticos, taquillas y pantallas de información de vuelos para el personal operativo.'},
+      {name:'Oficina Supervisores de Vuelo', level:'restringido', desc:'Supervisión diaria de las operaciones aéreas de la división.'} ],
+    [ {name:'Aircrew Lounge', level:'asd', desc:'Zona de descanso específica para pilotos y tripulación, con grandes vistas hacia hangares y plataforma.'},
+      {name:'Sala de Descanso', level:'asd', desc:'Zona común con sofás, cocina pequeña y máquinas expendedoras para todo el personal.'},
+      {name:'Descanso Tranquilo', level:'asd', desc:'Sala silenciosa y privada para personal que necesita descansar entre turnos.'} ],
+    [ {name:'Vestuario Masculino', level:'asd', desc:'Taquillas, duchas y baños para el personal de ASD.'},
+      {name:'Vestuario Femenino', level:'asd', desc:'Taquillas, duchas y baños para el personal de ASD.'},
+      {name:'Flight Gear Room', level:'restringido', desc:'Almacén de cascos de piloto, auriculares, chalecos y equipamiento de vuelo y emergencia.'},
+      {name:'Sala Médica', level:'asd', desc:'Camilla, desfibrilador y botiquines para accidentes de trabajo, entrenamientos o emergencias.'},
+      {name:'Armería ASD', level:'critico', desc:'Armería restringida con armamento, munición y equipamiento táctico, con zona de entrega y devolución.'} ],
   ],
-  flows:[{type:'detenido', d:'M 40 40 L 780 40 L 780 380'}, {type:'policial', d:'M 900 60 L 900 470'}]
+  flows:[{type:'civil', d:'M 40 40 L 40 120'}, {type:'policial', d:'M 900 40 L 900 500'}]
 },
 {
-  id:'pb', code:'PB', name:'Planta Baja',
-  sub:'Operaciones principales — Recepción, vestuarios y briefing',
+  id:'hangares', code:'B', name:'Sector B — Hangares',
+  sub:'Almacenamiento, preparación y mantenimiento de aeronaves',
   rows:[
-    [ {name:'Recepción Civil', level:'publico', desc:'Primer punto de contacto para ciudadanos. Mostrador de atención, zona de espera y acceso controlado hacia el interior del edificio.'},
-      {name:'Atención Ciudadana', level:'publico', desc:'Despachos para denuncias, trámites y consultas del público general.'},
-      {name:'Baños Públicos', level:'publico', desc:'Aseos accesibles junto a recepción, de uso exclusivo para visitantes.'},
-      {name:'Briefing Room', level:'policial', flex:2, desc:'Sala de reuniones de turno con pantalla, pizarra y mapa de la ciudad, usada para briefings generales y operativos.'} ],
-    [ {name:'Vestuario Masculino', level:'policial', desc:'Taquillas, bancos, duchas y baños para agentes.'},
-      {name:'Vestuario Femenino', level:'policial', desc:'Taquillas, bancos, duchas y baños para agentes.'},
-      {name:'Equipamiento', level:'policial', desc:'Zona de entrega de material básico de patrulla, junto a los vestuarios.'},
-      {name:'Cueva de Analistas', level:'restringido', flex:2, desc:'Oficina tecnológica con múltiples puestos informáticos dedicados a inteligencia policial, análisis de cámaras y matrículas.'},
-      {name:'Armería', level:'restringido', desc:'Zona de máxima restricción con armeros, munición y equipo táctico. Oficina de control registra qué material lleva cada agente.'} ],
-    [ {name:'Sala de Descanso', level:'policial', desc:'Zona de descanso con sofás, máquinas expendedoras, neveras y televisión para el personal de turno.'},
-      {name:'Despachos de Capitanes', level:'restringido', desc:'Despachos individuales para capitanes, con zona de reunión y vistas a la zona operativa.'},
-      {name:'Sala de Servidores', level:'restringido', desc:'Sala técnica de acceso restringido que aloja los servidores de la Cueva de Analistas.'},
-      {name:'Entrada Policial (interior)', level:'policial', desc:'Punto de llegada de la entrada policial exterior, distribuye hacia vestuarios y briefing.'} ],
+    [ {name:'Hangar Principal', level:'restringido', flex:2, desc:'Hangar con varias posiciones definidas para aeronaves, zona de preparación, pasarelas y señalización de seguridad.'},
+      {name:'Hangar de Mantenimiento', level:'restringido', desc:'Segundo hangar para aeronaves en reparación, inspección o fuera de servicio, con bancos de trabajo y equipos técnicos.'} ],
+    [ {name:'Taller Aeronáutico', level:'restringido', desc:'Zona de herramientas, piezas y equipos de inspección conectada al hangar de mantenimiento.'},
+      {name:'Oficina Jefe de Mantenimiento', level:'restringido', desc:'Despacho con vista directa al taller para supervisar las tareas de mantenimiento.'} ],
   ],
-  flows:[{type:'civil', d:'M 40 40 L 40 130'}, {type:'policial', d:'M 950 40 L 950 380'}, {type:'detenido', d:'M 40 480 L 950 480'}]
+  flows:[{type:'detenido', d:'M 40 40 L 900 40'}]
 },
 {
-  id:'p1', code:'P1', name:'Planta 1',
-  sub:'Investigación y administración — Nivel policial/restringido',
+  id:'logistica', code:'E', name:'Sector E — Apoyo Terrestre',
+  sub:'Almacén técnico, logística y garaje de vehículos ASD',
   rows:[
-    [ {name:'Sala de Evidencias', level:'restringido', desc:'Almacén seguro de pruebas con zona refrigerada, taquillas individuales y estación para registrar la cadena de custodia.'},
-      {name:'Archivos / Records', level:'restringido', desc:'Departamento de expedientes, informes y antecedentes policiales, físicos y digitales.'},
-      {name:'Dispatch / Comunicaciones', level:'restringido', desc:'Central operativa con operadores de radio, mapa de la ciudad y seguimiento en tiempo real de unidades.'} ],
-    [ {name:'Centro CCTV', level:'restringido', desc:'Sala de videovigilancia que controla cámaras de la comisaría, garajes, entradas y vía pública.'},
-      {name:'Centro de Control', level:'restringido', desc:'Sala conjunta de supervisión operativa, conectada con Dispatch y CCTV.'},
-      {name:'Oficinas Investigadores', level:'policial', desc:'Puestos de trabajo del Detective Bureau para el seguimiento de casos activos.'} ],
-    [ {name:'Salas Administrativas', level:'policial', desc:'Oficinas de gestión documental y trámites internos de la comisaría.'},
-      {name:'Sala de Reuniones', level:'policial', desc:'Sala de reuniones para investigadores y personal administrativo.'} ],
+    [ {name:'Almacén Técnico', level:'restringido', flex:2, desc:'Almacén de repuestos aeronáuticos, componentes, baterías y material especializado, con estación de control de inventario.'},
+      {name:'Zona de Logística y Carga', level:'asd', desc:'Recepción de suministros con acceso directo desde el exterior, evitando cruzar las zonas de aeronaves.'} ],
+    [ {name:'Garaje de Vehículos Terrestres', level:'asd', flex:2, desc:'Garaje independiente de los hangares para SUV, furgonetas y vehículos de apoyo y logística de ASD.'},
+      {name:'Taller de Vehículos', level:'asd', desc:'Pequeño taller de mantenimiento para los vehículos terrestres de la división.'} ],
   ],
-  flows:[{type:'policial', d:'M 500 40 L 500 380'}]
+  flows:[]
 },
 {
-  id:'p2', code:'P2', name:'Planta 2',
-  sub:'Oficinas de enlace de divisiones — Nivel policial',
+  id:'aerodromo', code:'C', name:'Sector C — Aeródromo',
+  sub:'Plataforma, taxiway, pista principal y helipads',
   rows:[
-    [ {name:'ASD — Air Support Division', level:'policial', desc:'Oficina de enlace de la unidad aérea. Coordina operativos con helicópteros; la división opera desde un edificio independiente.'},
-      {name:'DB — Detective Bureau', level:'policial', desc:'Enlace del cuerpo de detectives con la comisaría central.'},
-      {name:'Highway Patrol', level:'policial', desc:'Oficina de enlace de la patrulla de caminos y carreteras.'},
-      {name:'Press — Prensa', level:'policial', desc:'Despacho de relaciones con medios y comunicación institucional.'} ],
-    [ {name:'K9 Unit', level:'policial', desc:'Oficina de enlace de la unidad canina.'},
-      {name:'RTD — Educación y Formación', level:'policial', desc:'Enlace del departamento de formación y entrenamiento de agentes.'},
-      {name:'SRU — Street Racing Unit', level:'policial', desc:'Oficina de enlace de la unidad de carreras callejeras.'},
-      {name:'SWAT', level:'restringido', desc:'Oficina de enlace de la unidad táctica especial, con acceso más restringido que el resto de divisiones.'} ],
-    [ {name:'Sala Común de Reuniones de Divisiones', level:'policial', flex:2, desc:'Espacio compartido donde los enlaces de las distintas divisiones coordinan operativos conjuntos.'} ],
+    [ {name:'Plataforma / Apron', level:'restringido', flex:2, desc:'Gran plataforma frente a los hangares para estacionar, preparar, repostar y embarcar personal en las aeronaves.'},
+      {name:'Helipads H1 / H2 / H3', level:'restringido', desc:'Tres helipads —Operaciones, Emergencias y Mantenimiento— conectados directamente con la plataforma.'} ],
+    [ {name:'Taxiway', level:'critico', flex:3, desc:'Calle de rodaje señalizada que conecta la plataforma con la pista principal, separada de las carreteras terrestres.'} ],
+    [ {name:'Pista Principal', level:'critico', flex:3, desc:'Pista de aterrizaje y despegue con marcas, luces y zonas de seguridad, dimensionada para las aeronaves de ASD.'} ],
   ],
-  flows:[{type:'policial', d:'M 500 40 L 500 380'}]
+  flows:[{type:'policial', d:'M 60 40 L 60 340'}]
 },
 {
-  id:'p3', code:'P3', name:'Planta 3',
-  sub:'Jefatura — Nivel máxima seguridad, acceso por tarjeta',
+  id:'torre', code:'D', name:'Sector D — Torre y Observación',
+  sub:'Torre de control y punto de observación avanzada',
   rows:[
-    [ {name:'Despacho de la Comisaria', level:'maxima', flex:2, desc:'Despacho principal del edificio, con zona de reuniones, sofás y vistas privilegiadas de la ciudad.'},
-      {name:'Despacho del Subcomisario', level:'maxima', desc:'Despacho amplio contiguo al de la Comisaria.'} ],
-    [ {name:'Comandante 1', level:'restringido', desc:'Despacho individual de mando.'},
-      {name:'Comandante 2', level:'restringido', desc:'Despacho individual de mando.'},
-      {name:'Comandante 3', level:'restringido', desc:'Despacho individual de mando.'},
-      {name:'Comandante 4', level:'restringido', desc:'Despacho individual de mando.'} ],
-    [ {name:'Sala de Reuniones de Mando', level:'maxima', flex:2, desc:'Sala elegante para reuniones de Comisaria, Subcomisario y Comandantes, con videoconferencia y mapa de la ciudad.'},
-      {name:'Sala Descanso Jefatura', level:'restringido', desc:'Zona de descanso privada para mandos, más tranquila que la de planta baja.'},
-      {name:'Baños Jefatura', level:'restringido', desc:'Aseos exclusivos de la planta de jefatura.'} ],
+    [ {name:'Torre — Planta Inferior', level:'restringido', desc:'Acceso, seguridad y equipamiento técnico en la base de la torre de control.'},
+      {name:'Torre — Sala de Control', level:'critico', desc:'Planta superior con grandes ventanales, radios y pantallas, con visibilidad completa sobre pista, plataforma y hangares.'} ],
+    [ {name:'Punto de Observación Avanzada', level:'restringido', desc:'Estructura elevada independiente con equipos ópticos y radios, usada como vigilancia durante operaciones especiales.'} ],
   ],
-  flows:[{type:'policial', d:'M 500 40 L 500 380'}]
+  flows:[]
 },
 {
-  id:'azotea', code:'AZ', name:'Azotea',
-  sub:'Helipuerto e infraestructura técnica — Acceso restringido',
+  id:'combustible', code:'G', name:'Sector G — Combustible y Emergencias',
+  sub:'Repostaje aeronáutico y respuesta ante incidentes',
   rows:[
-    [ {name:'Helipuerto', level:'restringido', flex:2, desc:'Plataforma para helicópteros policiales y operaciones especiales. Accesible únicamente desde zonas restringidas del edificio.'},
-      {name:'Comunicaciones', level:'restringido', desc:'Antenas y equipos de radio que dan cobertura a toda la comisaría.'} ],
-    [ {name:'Zona Técnica', level:'restringido', desc:'HVAC, generadores y sistemas eléctricos de emergencia del edificio.'},
-      {name:'Zona Descanso Exterior', level:'restringido', desc:'Pequeña terraza de descanso para personal autorizado.'} ],
+    [ {name:'Zona de Repostaje', level:'critico', desc:'Depósitos de combustible alejados de los edificios principales, con acceso técnico independiente y barreras de seguridad.'},
+      {name:'Zona de Emergencias Aeronáuticas', level:'restringido', desc:'Equipamiento contra incendios y vehículos de respuesta, ubicada para permitir acceso rápido a la pista.'} ],
   ],
-  flows:[{type:'policial', d:'M 500 40 L 500 300'}]
+  flows:[]
 },
 ];
 
@@ -464,14 +436,12 @@ const modalHost = document.getElementById('modalHost');
 
 let currentFloorIdx = 0;
 
-function levelColorVar(level){ return LEVELS[level].color; }
-
 function renderFloorTabs(){
   floorPanel.innerHTML = '';
   FLOORS.forEach((f, i)=>{
     const b = document.createElement('button');
     b.className = 'floor-btn' + (i===currentFloorIdx ? ' active' : '');
-    b.textContent = f.code + ' · ' + f.name;
+    b.textContent = f.code + ' · ' + f.name.replace(/^Sector [A-Z] — /,'');
     b.onclick = ()=>{ currentFloorIdx = i; renderFloorTabs(); renderFloor(); };
     floorPanel.appendChild(b);
   });
@@ -485,7 +455,7 @@ function svgEl(tag, attrs){
 
 function renderFloor(){
   const floor = FLOORS[currentFloorIdx];
-  planTitle.textContent = floor.name.toUpperCase() + ' — ' + floor.sub.split(' — ')[0];
+  planTitle.textContent = floor.name.toUpperCase();
   planSub.textContent = floor.sub;
 
   const {rects, corridors, totalH} = layoutFloor(floor);
@@ -493,41 +463,37 @@ function renderFloor(){
 
   const svg = svgEl('svg', {class:'floor-svg', viewBox:`0 0 ${width} ${totalH}`, xmlns:'http://www.w3.org/2000/svg'});
 
-  // building outline
-  svg.appendChild(svgEl('rect', {x:8, y:8, width:width-16, height:totalH-16, fill:'none', stroke:'#2b4364', 'stroke-width':2, rx:10}));
+  svg.appendChild(svgEl('rect', {x:8, y:8, width:width-16, height:totalH-16, fill:'none', stroke:'#2b5850', 'stroke-width':2, rx:10}));
 
-  // corridors
   corridors.forEach(c=>{
     const g = svgEl('g', {});
-    g.appendChild(svgEl('rect', {x:c.x, y:c.y, width:c.w, height:c.h, fill:'#0F1B2C', stroke:'#213a58', 'stroke-width':1, 'stroke-dasharray':'4 4'}));
+    g.appendChild(svgEl('rect', {x:c.x, y:c.y, width:c.w, height:c.h, fill:'#0E1A19', stroke:'#21403c', 'stroke-width':1, 'stroke-dasharray':'4 4'}));
     const t = svgEl('text', {x: c.x + c.w/2, y: c.y + c.h/2 + 4, 'text-anchor':'middle', class:'corridor-label', 'font-size':10});
-    t.textContent = 'PASILLO';
+    t.textContent = 'CIRCULACIÓN';
     g.appendChild(t);
     svg.appendChild(g);
   });
 
-  // rooms
   rects.forEach((r, idx)=>{
     const lvl = LEVELS[r.level];
     const g = svgEl('g', {class:'room'});
-    const fillMap = {publico:'var(--publico-fill)', policial:'var(--policial-fill)', restringido:'var(--restringido-fill)', maxima:'var(--maxima-fill)'};
+    const fillMap = {publico:'var(--publico-fill)', asd:'var(--asd-fill)', restringido:'var(--restringido-fill)', critico:'var(--critico-fill)'};
     const rect = svgEl('rect', {
       x:r.x, y:r.y, width:r.w, height:r.h, rx:6,
       fill:fillMap[r.level], stroke:lvl.color, 'stroke-width':1.4
     });
     g.appendChild(rect);
 
-    if(r.level === 'maxima'){
+    if(r.level === 'critico'){
       const hatchId = 'hatch'+idx;
       const pattern = svgEl('pattern', {id:hatchId, width:8, height:8, patternTransform:'rotate(45)', patternUnits:'userSpaceOnUse'});
-      pattern.appendChild(svgEl('line', {x1:0, y1:0, x2:0, y2:8, stroke:'var(--maxima)', 'stroke-width':1, opacity:0.35}));
+      pattern.appendChild(svgEl('line', {x1:0, y1:0, x2:0, y2:8, stroke:'var(--critico)', 'stroke-width':1, opacity:0.35}));
       const defs = svgEl('defs', {});
       defs.appendChild(pattern);
       svg.appendChild(defs);
       g.appendChild(svgEl('rect', {x:r.x, y:r.y, width:r.w, height:r.h, rx:6, fill:`url(#${hatchId})`}));
     }
 
-    // wrap text
     const words = r.name.split(' ');
     const maxCharsPerLine = Math.max(10, Math.floor(r.w / 6.4));
     const lines = [];
@@ -552,11 +518,10 @@ function renderFloor(){
     svg.appendChild(g);
   });
 
-  // flows
-  if(floor.flows){
+  if(floor.flows && floor.flows.length){
     const defs2 = svgEl('defs', {});
     ['civil','policial','detenido'].forEach(type=>{
-      const color = type==='civil' ? '#3FA66B' : type==='policial' ? '#2E7FD9' : '#D6444A';
+      const color = type==='civil' ? '#2E7FD9' : type==='policial' ? '#3FA66B' : '#E07B22';
       const marker = svgEl('marker', {id:'arrow-'+type, markerWidth:8, markerHeight:8, refX:6, refY:3, orient:'auto'});
       const path = svgEl('path', {d:'M0,0 L6,3 L0,6 Z', fill:color});
       marker.appendChild(path);
@@ -564,7 +529,7 @@ function renderFloor(){
     });
     svg.appendChild(defs2);
     floor.flows.forEach(f=>{
-      const color = f.type==='civil' ? '#3FA66B' : f.type==='policial' ? '#2E7FD9' : '#D6444A';
+      const color = f.type==='civil' ? '#2E7FD9' : f.type==='policial' ? '#3FA66B' : '#E07B22';
       const p = svgEl('path', {d:f.d, fill:'none', stroke:color, 'stroke-width':3, 'stroke-dasharray':'2 6', 'stroke-linecap':'round', 'marker-end':`url(#arrow-${f.type})`, opacity:0.85});
       svg.appendChild(p);
     });
@@ -587,7 +552,7 @@ function showRoomInfo(room){
 }
 
 function resetRoomInfo(){
-  infoCard.innerHTML = `<h3>Sala seleccionada</h3><div class="plaque"><p class="empty">Pulsa una sala del plano para leer su cartel informativo.</p></div>`;
+  infoCard.innerHTML = `<h3>Sala seleccionada</h3><div class="plaque"><p class="empty">Pulsa una zona del plano para leer su cartel informativo.</p></div>`;
 }
 
 /* ============ ACCESO / LECTOR ============ */
@@ -607,7 +572,7 @@ function openReader(room){
     <div class="overlay" id="overlayBg">
       <div class="reader" id="readerBox">
         <div class="led" id="ledDot"></div>
-        <h2>Control de acceso</h2>
+        <h2>Control de acceso ASD</h2>
         <p class="room-name">${room.name}</p>
         <div class="req-row"><span>Nivel requerido</span><span class="lvl-chip" style="background:${lvl.hex}">${lvl.name}</span></div>
         <div class="req-row"><span>Tu credencial</span><span class="lvl-chip" id="curCredChip" style="background:${currentCred.cardA}">${currentCred.name}</span></div>
@@ -686,12 +651,12 @@ function renderLocationSelect(){
   LOCATIONS.forEach(loc=>{
     const opt = document.createElement('option');
     opt.value = loc.id; opt.textContent = loc.name;
-    if(loc.id === 'comisaria') opt.selected = true;
+    if(loc.id === 'asd') opt.selected = true;
     sel.appendChild(opt);
   });
   sel.onchange = ()=>{
     const target = LOCATIONS.find(l=>l.id === sel.value);
-    if(target && target.id !== 'comisaria') window.location.href = target.file;
+    if(target && target.id !== 'asd') window.location.href = target.file;
   };
 }
 
